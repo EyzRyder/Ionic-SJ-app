@@ -2,20 +2,27 @@ import React from "react";
 import { StatusBar } from 'expo-status-bar';
 import { TextInput, StyleSheet, Text, View } from 'react-native';
 import { WebView } from 'react-native-webview';
+import Frame from './ifr';
 
 
 export default function Main({ navigation }) {
     const [text, onChangeText] = React.useState(" ");
 
-    return (
-        <View style={styles.container}>
-            <Text style={styles.urlText}>URL</Text>
-            <TextInput 
-                style={styles.input}
-                onChangeText={onChangeText}
-                value={text}
-            />
-            {/* <WebView
+        return (
+            <View style={styles.container}>
+                <Text style={styles.urlText}>URL</Text>
+                <TextInput
+                    style={styles.input}
+                    onChangeText={onChangeText}
+                    value={text}
+                />
+            
+                <Frame/>
+                {/* <WebView
+                    originWhitelist={['*']}
+                    source={{ html: '<h1>Hello world</h1>' }}
+                /> */}
+                {/* <WebView
                 scalesPageToFit={false}
                 bounces={false}
                 javaScriptEnabled
@@ -28,9 +35,9 @@ export default function Main({ navigation }) {
                 }}
                 automaticallyAdjustContentInsets={false}
             /> */}
-            <StatusBar style="auto" />
-        </View>
-    );
+                <StatusBar style="auto" />
+            </View>
+        );
 }
 
 const styles = StyleSheet.create({
