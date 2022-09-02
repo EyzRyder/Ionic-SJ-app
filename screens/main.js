@@ -9,7 +9,7 @@ export default function Main({ navigation }) {
 
     return (
         <View style={styles.container}>
-            <Text>URL</Text>
+            <Text style={styles.urlText}>URL</Text>
             <TextInput 
                 style={styles.input}
                 onChangeText={onChangeText}
@@ -44,4 +44,10 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         padding: 10,
     },
+    urlText: {
+        paddingTop: '0.5em',
+        paddingLeft: '0.5em',
+        fontSize: "1.3em",
+        fontWeight: 500,
+    }
 });
