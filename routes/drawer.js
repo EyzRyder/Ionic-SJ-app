@@ -16,7 +16,18 @@ const Stack = createNativeStackNavigator()
 
 function DrawerNavigator() {
     return (
-        <Drawer.Navigator initialRouteName="MILABAG">
+        <Drawer.Navigator
+            screenOptions={{
+                headerTintColor: '#ffff',
+                drawerActiveTintColor:'#4f0224',
+                headerStyle: {
+                    backgroundColor: '#d3145c',
+                },
+                drawerStyle: {
+                    backgroundColor: '#ffe6f1',
+                },
+            }}
+            initialRouteName="MILABAG">
                 <Drawer.Screen name="MILABAG" component={Main} />
                 <Drawer.Screen name="Denuncia" component={Denuncia} />
                 <Drawer.Screen name="Ajuda" component={Ajuda} />
@@ -28,12 +39,11 @@ function DrawerNavigator() {
 export function AppNav() {
     return (
     <NavigationContainer>
-    <Stack.Navigator>
+            <Stack.Navigator screenOptions={{ headerShown: false }}>
                 <Stack.Screen
-                    options={{headerShown: false}}
                     name=" "
                     component={Home} />
-                <Stack.Screen options={{ headerShown: false }} name="MILABAG" component={DrawerNavigator} />
+                <Stack.Screen name="MILABAG" component={DrawerNavigator} />
     </Stack.Navigator>
         </NavigationContainer>
     );
