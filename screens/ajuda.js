@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 
-export default function Ajuda() {
+export default function Ajuda({ navigation }) {
     return (
         <View style={styles.container}>
             <Text style={styles.title}>

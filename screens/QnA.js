@@ -1,10 +1,10 @@
 import { StatusBar } from 'expo-status-bar';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 
-export default function QA() {
+export default function QnA({ navigation }) {
     return (
         <View style={styles.container}>
-
+            <Text>oi</Text>
             <StatusBar style="auto" />
         </View>
     );

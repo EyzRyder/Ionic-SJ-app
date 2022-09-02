@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { Linking, StyleSheet, Text, View } from 'react-native';
 
-export default function Denuncia() {
+export default function Denuncia({ navigation }) {
     return (
         <View style={styles.container}>
             <Text style={styles.title}>

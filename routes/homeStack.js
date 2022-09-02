@@ -1,44 +1,44 @@
-import { createStackNavigator } from 'react-navigation-stack';
-import { createAppContainer } from 'react-navigation';
+import React from 'react';
+import { createStackNavigator } from '@react-navigation/stack';
 import Home from '../screens/home';
-import Denuncia from '../screens/denuncia';
-import Ajuda from '../screens/ajuda';
-import QA from '../screens/Q&A';
-import Main from '../screens/main';
+import Nav from '../screens/navigate';
 
-const screens = {
-    Home: {
-        screen: Home,
-        navigationOptions: {
-            title: 'MILABAG',
-        }
-    },
-    Main: {
-        screen: Main,
-        navigationOptions: {
-            title: 'MILABAG',
-        }
-    },
-    Denuncia: {
-        screen: Denuncia,
-    },
-    Ajuda: {
-        screen: Ajuda,
-    },
-    QA: {
-        screen: QA,
-    }
+
+const homeStack = createStackNavigator()
+
+export const HomeStack = () => {
+    return (
+        <homeStack.Navigator>
+            <homeStack.Screen name="Home" component={Home} />
+            <homeStack.Screen name=" " component={Nav} />
+        </homeStack.Navigator>
+    )
 }
 
-const HomeStack = createStackNavigator(screens,
-    {
-        defaultNavigationOptions: {
-            headerStyle: {
-                backgroundColor: 'red',
-                borderBottomColor: 'black',
-                borderBottomWidth: 0,
-                boxShadow: 'none',
-            }
-        }
-    });
-export default createAppContainer(HomeStack);
+// const screens = {
+//     Home: {
+//         screen: Home,
+//         navigationOptions: {
+//             title: 'MILABAG',
+//         }
+//     },
+//     Main: {
+//         screen: Main,
+//         navigationOptions: {
+//             title: 'MILABAG',
+//         }
+//     }
+// }
+
+// const HomeStack = createStackNavigator(screens,
+//     {
+//         defaultNavigationOptions: {
+//             headerStyle: {
+//                 backgroundColor: 'red',
+//                 borderBottomColor: 'black',
+//                 borderBottomWidth: 0,
+//                 boxShadow: 'none',
+//             }
+//         }
+//     });
+// export default HomeStack;

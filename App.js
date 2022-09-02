@@ -1,9 +1,10 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, View } from 'react-native';
-import Navigator from './routes/homeStack';
+import 'react-native-gesture-handler';
+// import Navigator from './routes/drawer';
+import { AppNav } from './routes/drawer';
+
 
 export default function App() {
   return (
-        <Navigator />
+    <AppNav />
   );
 }

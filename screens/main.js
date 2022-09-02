@@ -3,9 +3,10 @@ import { Pressable, StyleSheet, Text, View } from 'react-native';
 import { WebView } from 'react-native-webview';
 
 
-export default function Main() {
+export default function Main({ navigation }) {
     return (
         <View style={styles.container}>
+            <Text>oi</Text>
             {/* <WebView
                 scalesPageToFit={true}
                 bounces={false}
