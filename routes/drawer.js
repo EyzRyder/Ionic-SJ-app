@@ -1,7 +1,8 @@
 import React from 'react';
 import { createDrawerNavigator } from '@react-navigation/drawer';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
+
 
 
 import Home from '../screens/home';
@@ -11,46 +12,26 @@ import QnA from '../screens/QnA';
 import Denuncia from '../screens/denuncia';
 
 const Drawer = createDrawerNavigator();
-const homeStack = createStackNavigator()
+const Stack = createNativeStackNavigator()
 
-export function AppNav() {
+function DrawerNavigator() {
     return (
-        <NavigationContainer>
-            <Drawer.Navigator initialRouteName="Home">
+        <Drawer.Navigator initialRouteName="MILABAG">
                 <Drawer.Screen name="MILABAG" component={Main} />
                 <Drawer.Screen name="Denuncia" component={Denuncia} />
                 <Drawer.Screen name="Ajuda" component={Ajuda} />
                 <Drawer.Screen name="Perguntas frequentes" component={QnA} />
             </Drawer.Navigator>
-        </NavigationContainer>
     );
 }
 
-
-export const HomeStack = () => {
+export function AppNav() {
     return (
-        <homeStack.Navigator>
-            <homeStack.Screen name="Home" component={Home} />
-            <homeStack.Screen name=" " component={Nav} />
-        </homeStack.Navigator>
-    )
+    <NavigationContainer>
+    <Stack.Navigator>
+        <Stack.Screen name=" " component={Home} />
+        <Stack.Screen name="MILABAG" component={DrawerNavigator} />
+    </Stack.Navigator>
+        </NavigationContainer>
+    );
 }
-
-// const RootDrawerNavigator = createDrawerNavigator({
-//     Home: {
-//         screen: HomeStack,
-//     },
-//     Denuncia: {
-//         screen: DenunciaStack,
-//     },
-//     Ajuda: {
-//         screen: AjudaStack,
-//     },
-//     QnA: {
-//         screen: QnAStack,
-//     }
-// })
-
-
-
-//export default createAppContainer(RootDrawerNavigator);

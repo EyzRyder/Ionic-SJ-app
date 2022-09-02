@@ -3,8 +3,10 @@ import 'react-native-gesture-handler';
 import { AppNav } from './routes/drawer';
 
 
+
+
 export default function App() {
   return (
-    <AppNav />
+      <AppNav />
   );
 }
