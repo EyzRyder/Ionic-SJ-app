@@ -26,14 +26,13 @@ const screens = {
 
 const HomeStack = createStackNavigator(screens,
     {
-        // defaultNavigationOptions: {
-        //     title: '',
-        //     headerStyle: {
-        //         backgroundColor: 'red',
-        //         borderBottomColor: 'black',
-        //         borderBottomWidth: 1,
-        //         boxShadow: 'none',
-        //     }
-        // }
+        defaultNavigationOptions: {
+            headerStyle: {
+                backgroundColor: 'red',
+                borderBottomColor: 'black',
+                borderBottomWidth: 0,
+                boxShadow: 'none',
+            }
+        }
     });
 export default createAppContainer(HomeStack);
