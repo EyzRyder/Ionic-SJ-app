@@ -43,7 +43,7 @@ export function AppNav() {
                 <Stack.Screen
                     name=" "
                     component={Home} />
-                <Stack.Screen name="MILABAG" component={DrawerNavigator} />
+                <Stack.Screen name="Drawer" component={DrawerNavigator} />
     </Stack.Navigator>
         </NavigationContainer>
     );
