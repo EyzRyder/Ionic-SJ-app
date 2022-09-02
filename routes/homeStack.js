@@ -9,9 +9,15 @@ import Main from '../screens/main';
 const screens = {
     Home: {
         screen: Home,
+        navigationOptions: {
+            title: 'MILABAG',
+        }
     },
     Main: {
         screen: Main,
+        navigationOptions: {
+            title: 'MILABAG',
+        }
     },
     Denuncia: {
         screen: Denuncia,
