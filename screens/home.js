@@ -4,7 +4,7 @@ import { Pressable, StyleSheet, Text, View } from 'react-native';
 export default function Home({ navigation }) {
     
     const pressHandler = () => {
-        navigation.navigate('Denuncia');
+        navigation.navigate('Ajuda');
     }
 
     return (
