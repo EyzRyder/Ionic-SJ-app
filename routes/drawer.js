@@ -29,8 +29,11 @@ export function AppNav() {
     return (
     <NavigationContainer>
     <Stack.Navigator>
-        <Stack.Screen name=" " component={Home} />
-        <Stack.Screen name="MILABAG" component={DrawerNavigator} />
+                <Stack.Screen
+                    options={{headerShown: false}}
+                    name=" "
+                    component={Home} />
+                <Stack.Screen options={{ headerShown: false }} name="MILABAG" component={DrawerNavigator} />
     </Stack.Navigator>
         </NavigationContainer>
     );
