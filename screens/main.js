@@ -1,28 +1,29 @@
+import React from "react";
 import { StatusBar } from 'expo-status-bar';
-import { Pressable, StyleSheet, Text, View } from 'react-native';
+import { TextInput, StyleSheet, Text, View } from 'react-native';
 import { WebView } from 'react-native-webview';
 
 
 export default function Main({ navigation }) {
+    const [text, onChangeText] = React.useState(" ");
+
     return (
         <View style={styles.container}>
-            <Text>oi</Text>
+            <Text>URL</Text>
+            <TextInput 
+                style={styles.input}
+                onChangeText={onChangeText}
+                value={text}
+            />
             {/* <WebView
-                scalesPageToFit={true}
+                scalesPageToFit={false}
                 bounces={false}
                 javaScriptEnabled
                 style={{ height: 500, width: 300 }}
                 source={{
                     html: `
-                  <!DOCTYPE html>
-                  <html>
-                    <head></head> // <--add header styles if needed
-                    <body>
-                      <div id="baseDiv"><iframe src="https://mdn-samples.mozilla.org/snippets/html/iframe-simple-contents.html"
-            title="iframe Example 1" width="400" height="300">
-</iframe></div> //<--- add your iframe here
-                    </body>
-                  </html>
+<iframe src="https://mdn-samples.mozilla.org/snippets/html/iframe-simple-contents.html" title="iframe Example 1" width="400" height="300">
+</iframe>
             `,
                 }}
                 automaticallyAdjustContentInsets={false}
@@ -36,7 +37,11 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#fff',
-        alignItems: 'center',
-        justifyContent: 'center',
+    },
+    input: {
+        height: 40,
+        margin: 12,
+        borderWidth: 1,
+        padding: 10,
     },
 });
