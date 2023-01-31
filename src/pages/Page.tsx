@@ -24,7 +24,7 @@ const Page: React.FC = () => {
             <IonTitle size="large">Millabag</IonTitle>
           </IonToolbar>
         </IonHeader>
-        <LinkPreview />
+        <LinkPreview url={"https://www.figma.com"} title={"Titulo"} description={"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eros arcu, luctus sit amet nibh ac, tristique faucibus tellus. Quisque libero justo, cursus at urna sit amet, dictum lobortis ligula. Cras"} />
       </IonContent>
     </IonPage>
   );

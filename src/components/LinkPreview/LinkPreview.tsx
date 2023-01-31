@@ -1,13 +1,20 @@
 import './LinkPreview.scss'
 import { IonButton } from '@ionic/react';
 
+interface ContainerProps {
+    url: string;
+    title: string;
+    description: string;
 
-const LinkPreview: React.FC = () => {
+}
+
+
+const LinkPreview: React.FC<ContainerProps> = ({ url, title, description }) => {
     return (
         <div className="linkContainer">
-            <h5>https://www.figma.com</h5>
-            <h1>Titulo</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eros arcu, luctus sit amet nibh ac, tristique faucibus tellus. Quisque libero justo, cursus at urna sit amet, dictum lobortis ligula. Cras</p>
+            <h5>{ url}</h5>
+            <h1>{ title}</h1>
+            <p>{ description}</p>
             <IonButton>View</IonButton>
         </div>
     );
