@@ -1,7 +1,7 @@
 import { IonButtons, IonContent, IonHeader, IonMenuButton, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import { useParams } from 'react-router';
-import ExploreContainer from '../components/ExploreContainer';
-import './Page.css';
+import LinkPreview from '../components/LinkPreview/LinkPreview';
+import './Page.scss';
 
 const Page: React.FC = () => {
 
@@ -21,10 +21,10 @@ const Page: React.FC = () => {
       <IonContent fullscreen>
         <IonHeader collapse="condense">
           <IonToolbar>
-            <IonTitle size="large">{name}</IonTitle>
+            <IonTitle size="large">Millabag</IonTitle>
           </IonToolbar>
         </IonHeader>
-        <ExploreContainer name={name} />
+        <LinkPreview />
       </IonContent>
     </IonPage>
   );
