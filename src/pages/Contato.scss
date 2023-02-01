@@ -1,6 +1,6 @@
-ion-content.ajudaPage {
+.contatoPage {
     --background: rgb(248 250 252);
     --padding-start: 2.25rem;
     --padding-end: 1.5rem;
-    color: black;
+    @apply px-9 py-6 h-full bg-slate-50 flex flex-col;
 }

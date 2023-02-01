@@ -8,10 +8,12 @@ import {
   IonMenu,
   IonMenuToggle,
   IonNote,
+  IonRadio,
+  IonRadioGroup,
 } from '@ionic/react';
 
 import { useLocation } from 'react-router-dom';
-import { archiveOutline, archiveSharp, heartOutline, heartSharp, helpCircleOutline, helpCircleSharp, homeOutline, homeSharp, mailOutline, mailSharp} from 'ionicons/icons';
+import { helpCircleOutline, helpCircleSharp, homeOutline, homeSharp, mailOutline, mailSharp} from 'ionicons/icons';
 import './Menu.scss';
 
 interface AppPage {
@@ -29,26 +31,14 @@ const appPages: AppPage[] = [
     mdIcon: homeSharp
   },
   {
-    title: 'Denuncia',
-    url: '/ajuda/denuncia',
-    iosIcon: archiveOutline,
-    mdIcon: archiveSharp
-  },
-  {
     title: 'Ajuda',
     url: '/ajuda',
-    iosIcon: heartOutline,
-    mdIcon: heartSharp
-  },
-  {
-    title: 'Perguntas',
-    url: '/ajuda/perguntas',
     iosIcon: helpCircleOutline,
     mdIcon: helpCircleSharp
   },
   {
     title: 'Contato',
-    url: '/ajuda/contato',
+    url: '/contato',
     iosIcon: mailOutline,
     mdIcon: mailSharp
   },
@@ -75,6 +65,10 @@ const Menu: React.FC = () => {
               </IonMenuToggle>
             );
           })}
+          <IonRadioGroup value="custom-checked">
+            <IonRadio className='night' value="custom">Dark</IonRadio>
+            <IonRadio className='day' value="custom-checked">Light</IonRadio>
+          </IonRadioGroup>
         </IonList>
       </IonContent>
     </IonMenu>
