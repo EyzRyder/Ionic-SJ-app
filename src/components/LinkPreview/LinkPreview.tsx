@@ -5,17 +5,19 @@ interface ContainerProps {
     url: string;
     title: string;
     description: string;
-
 }
 
 
 const LinkPreview: React.FC<ContainerProps> = ({ url, title, description }) => {
     return (
         <div className="linkContainer">
-            <h5>{ url}</h5>
-            <h1>{ title}</h1>
-            <p>{ description}</p>
-            <IonButton>View</IonButton>
+            <img className='previewImg' src="#" alt="Imagem" />
+            <div className='previewText'>
+                <h5 className='url'>{url}</h5>
+                <h1 className='title'>{title}</h1>
+                <p className='description'>{description}</p>
+            </div>
+            <IonButton class='btn'>View</IonButton>
         </div>
     );
 };

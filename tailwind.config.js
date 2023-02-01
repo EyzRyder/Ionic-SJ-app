@@ -4,8 +4,11 @@ module.exports = {
     "./src/**/*.{html,js,jsx,ts,tsx,css,scss}",
   ],
   theme: {
-    extend: {},
-    colors: {
+    extend: {
+      fontFamily: {
+        jura: "Jura",
+      },
+      colors: {
       primary: {
         default: 'var(--ion-color-primary)',
         shade: 'var(--ion-color-primary-shade)',
@@ -47,6 +50,7 @@ module.exports = {
         tint: 'var(--ion-color-dark-tint)',
       },
     }
+    },
   },
   plugins: [],
 }

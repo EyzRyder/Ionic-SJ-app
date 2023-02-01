@@ -1,0 +1,21 @@
+.mainPage{
+    @apply px-9 py-6 h-full bg-slate-50 flex flex-col gap-6;
+
+    ion-searchbar.custom {
+            --background: #FFFFFF;
+            --color: #8B8B8B;
+            --placeholder-color: #8B8B8B;
+            --icon-color: #8B8B8B;
+            --clear-button-color: rgb(134, 123, 123);
+    
+            --border-radius: 8px;
+        }
+    
+        ion-searchbar.ios.custom {
+            --cancel-button-color: #8B8B8B;
+        }
+    
+        ion-searchbar.md.custom {
+            --cancel-button-color: #8B8B8B;
+        }
+}
