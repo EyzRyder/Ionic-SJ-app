@@ -19,7 +19,7 @@ const Home: React.FC = () => {
         <IonSearchbar value={urlSearch} animated={true} placeholder="Digite ou cole o url aqui" class='custom' onIonBlur={(e) => { setUrlSearch(e.target.value || ""); }}></IonSearchbar>
         {isPending && <div>Carregando ...</div>}
 
-        {dataPage && <LinkPreview url={urlSearch} title={dataPage.title} description={dataPage.description} img={dataPage.img} />
+        {dataPage && <LinkPreview url={urlSearch} title={dataPage.title} description={dataPage.description} img={dataPage.img} icon={dataPage.favicon} />
         }
         {dataPage && <LinkReview risk={0} idade={24} selo={true} /> 
         }
