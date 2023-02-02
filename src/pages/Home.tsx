@@ -9,8 +9,9 @@ import useGet from '../hook/useGet';
 
 const Home: React.FC = () => {
   const [urlSearch, setUrlSearch] = useState<string>("")
-  const { dataPage, isPending, error } = useGet("http://localhost:3000/api/previewlink", urlSearch);
+  const { metaData, dataWho, isPending, error } = useGet(urlSearch);
 
+  
   return (
     <IonPage>
       <Header name={"SJ App"} />
@@ -19,9 +20,9 @@ const Home: React.FC = () => {
         <IonSearchbar value={urlSearch} animated={true} placeholder="Digite ou cole o url aqui" class='custom' onIonBlur={(e) => { setUrlSearch(e.target.value || ""); }}></IonSearchbar>
         {isPending && <div>Carregando ...</div>}
 
-        {dataPage && <LinkPreview url={urlSearch} title={dataPage.title} description={dataPage.description} img={dataPage.img} icon={dataPage.favicon} />
+        {metaData && <LinkPreview url={urlSearch} title={metaData.title} description={metaData.description} img={metaData.img} icon={metaData.favicon} />
         }
-        {dataPage && <LinkReview risk={0} idade={24} selo={true} /> 
+        {dataWho && <LinkReview nome={dataWho.whoRegistered} risk={0} idade={dataWho.registeredOn} selo={true} status={dataWho.status} /> 
         }
         {error && <div>{error}</div>}
       </IonContent>
