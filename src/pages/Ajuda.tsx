@@ -15,7 +15,7 @@ const Ajuda: React.FC = () => {
         <IonPage>
             <Header name={"Milabag"} />
 
-            <IonContent fullscreen class='ajudaPage' scrollEvents={true}>
+            <IonContent fullscreen class='ajudaPage'>
                 <IonSegment value={segment} onIonChange={(e) => {
                     setSegment(e.target.value);
                 }}>
