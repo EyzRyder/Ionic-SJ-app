@@ -13,7 +13,7 @@ const Home: React.FC = () => {
 
   return (
     <IonPage>
-      <Header name={"Milabag"} />
+      <Header name={"SJ App"} />
 
       <IonContent class='mainPage' fullscreen scrollEvents={true}>
         <IonSearchbar value={urlSearch} animated={true} placeholder="Digite ou cole o url aqui" class='custom' onIonBlur={(e) => { setUrlSearch(e.target.value || ""); }}></IonSearchbar>
