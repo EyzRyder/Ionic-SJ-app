@@ -13,6 +13,7 @@ export interface IWho {
     "whoRegistered": string,
     "registeredOn": string,
     "status": string,
+    "detectionsCounts":string
 }
 
 const useGet = (data: string) => {
@@ -25,7 +26,6 @@ const useGet = (data: string) => {
         if (data == "") {
             setMetaData(null);
             setDataWho(null)
-
             setIsPending(false)
             setError(null);
             return;
@@ -46,8 +46,9 @@ const useGet = (data: string) => {
                 setError(err.message)
                 console.log(err.message);
             });
-        
+
         setIsPending(true);
+
 
         Axios.post("http://localhost:3000/api/registerdata", { data })
             .then(res => {

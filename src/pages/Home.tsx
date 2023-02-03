@@ -4,12 +4,11 @@ import Header from '../components/Header/Header';
 import LinkPreview from '../components/LinkPreview/LinkPreview';
 import LinkReview from '../components/LinkReview/LinkReview';
 import './Home.scss';
-import Axios from 'axios';
 import useGet from '../hook/useGet';
 
 const Home: React.FC = () => {
   const [urlSearch, setUrlSearch] = useState<string>("")
-  const { metaData, dataWho, isPending, error } = useGet(urlSearch);
+  const { metaData, dataWho ,isPending, error } = useGet(urlSearch);
 
   
   return (
@@ -22,7 +21,7 @@ const Home: React.FC = () => {
 
         {metaData && <LinkPreview url={urlSearch} title={metaData.title} description={metaData.description} img={metaData.img} icon={metaData.favicon} />
         }
-        {dataWho && <LinkReview nome={dataWho.whoRegistered} risk={0} idade={dataWho.registeredOn} selo={true} status={dataWho.status} /> 
+        {dataWho && <LinkReview nome={dataWho.whoRegistered} risk={dataWho.detectionsCounts} idade={dataWho.registeredOn} status={dataWho.status} /> 
         }
         {error && <div>{error}</div>}
       </IonContent>
