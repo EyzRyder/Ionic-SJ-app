@@ -1,4 +1,4 @@
-import { IonContent, IonLabel, IonPage, IonSegment, IonSegmentButton } from '@ionic/react';
+import { IonContent } from '@ionic/react';
 import './Perguntas.scss';
 
 const Perguntas: React.FC = () => {

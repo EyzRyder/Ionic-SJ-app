@@ -16,14 +16,18 @@ export interface IWho {
     "detectionsCounts":string
 }
 
+const api = Axios.create({
+    baseURL: process.env.REACT_APP_API_URL
+})
+
 const useGet = (data: string) => {
     const [metaData, setMetaData] = useState<ILink | null>(null);
     const [dataWho, setDataWho] = useState<IWho | null>(null);
     const [isPending, setIsPending] = useState<boolean>(true);
-    const [error, setError] = useState<any>(null);
+    const [error, setError] = useState<Error|null>(null);
 
     useEffect(() => {
-        if (data == "") {
+        if (data === "") {
             setMetaData(null);
             setDataWho(null)
             setIsPending(false)
@@ -32,12 +36,11 @@ const useGet = (data: string) => {
         }
         setIsPending(true);
 
-        Axios.post("http://localhost:3000/api/previewlink", { data })
+        api.post("previewlink", { data })
             .then(res => {
                 if (res.statusText !== "OK") {
                     throw Error('Could not get the data fot that resource');
                 }
-                setIsPending(false);
                 setError(null);
                 setMetaData(res.data)
             })
@@ -45,25 +48,30 @@ const useGet = (data: string) => {
                 setMetaData(null);
                 setError(err.message)
                 console.log(err.message);
-            });
-
-        setIsPending(true);
-
-
-        Axios.post("http://localhost:3000/api/registerdata", { data })
-            .then(res => {
-                if (res.statusText !== "OK") {
-                    throw Error('Could not get the data fot that resource');
-                }
-                setIsPending(false);
-                setError(null);
-                setDataWho(res.data)
             })
-            .catch(err => {
-                setDataWho(null)
-                setError(err.message)
-                console.log(err.message);
+            .finally(() => {
+                setIsPending(false);
             });
+
+        // setIsPending(true);
+
+
+        // api.post("registerdata", { data })
+        //     .then(res => {
+        //         if (res.statusText !== "OK") {
+        //             throw Error('Could not get the data fot that resource');
+        //         }
+        //         setError(null);
+        //         setDataWho(res.data)
+        //     })
+        //     .catch(err => {
+        //         setDataWho(null)
+        //         setError(err.message)
+        //         console.log(err.message);
+        //     })
+        //     .finally(() => {
+        //         setIsPending(false);
+        //     });;
     }, [data])
 
     return { metaData, dataWho, isPending, error }

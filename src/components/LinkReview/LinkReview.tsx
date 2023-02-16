@@ -17,7 +17,7 @@ const LinkReview: React.FC<ContainerProps> = ({ nome, risk, idade, status }) => 
         if (age > 1) {
             return age + " anos"
         }
-        if (age == 1) {
+        if (age === 1) {
             return age + " ano"
         }
 

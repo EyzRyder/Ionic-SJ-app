@@ -29,9 +29,9 @@ const Ajuda: React.FC = () => {
                             <IonLabel>Perguntas</IonLabel>
                         </IonSegmentButton>
                 </IonSegment>
-                {segment == 'denuncia' && <Denuncia/>}
-                {segment == 'dicas' && <Dicas/>}
-                {segment == 'perguntas' && <Perguntas/>}
+                {segment === 'denuncia' && <Denuncia/>}
+                {segment === 'dicas' && <Dicas/>}
+                {segment === 'perguntas' && <Perguntas/>}
 
             </IonContent>
         </IonPage>
