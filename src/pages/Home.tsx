@@ -5,10 +5,12 @@ import LinkPreview from '../components/LinkPreview/LinkPreview';
 import LinkReview from '../components/LinkReview/LinkReview';
 import './Home.scss';
 import useGet from '../hook/useGet';
+import Loading from '../components/Loading/Loading';
+import Error from '../components/Error/Error';
 
 const Home: React.FC = () => {
   const [urlSearch, setUrlSearch] = useState<string>("")
-  const { metaData, dataWho, isPending, error } = useGet(urlSearch);
+  const { data, isPending, error } = useGet(urlSearch);
 
   console.log(error)
 
@@ -18,11 +20,13 @@ const Home: React.FC = () => {
 
       <IonContent class='mainPage' fullscreen scrollEvents={true}>
         <IonSearchbar value={urlSearch} animated={true} placeholder="Digite ou cole o url aqui" class='custom' onIonBlur={(e) => { setUrlSearch(e.target.value || ""); }}></IonSearchbar>
-        {isPending && <div>Carregando ...</div>}
-        {error && <div> {error.message}</div>}
+        {isPending && <Loading/>}
+        {error && <Error message={error.message} />}
 
-        {metaData && <LinkPreview url={urlSearch} title={metaData.title} description={metaData.description} img={metaData.img} icon={metaData.favicon} />}
-        {dataWho && <LinkReview nome={dataWho.whoRegistered} risk={dataWho.detectionsCounts} idade={dataWho.registeredOn} status={dataWho.status} />}
+        {data && <div>
+          <LinkPreview url={urlSearch} title={data.title} description={data.description} img={data.img} />
+        <LinkReview nome={data.whoRegistered} risk={data.detectionsCounts} idade={data.registeredOn} status={data.status} />
+        </div>}
       </IonContent>
     </IonPage>
   );

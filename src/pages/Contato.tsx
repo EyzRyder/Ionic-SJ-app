@@ -7,7 +7,7 @@ const Contato: React.FC = () => {
 
     return (
         <IonPage>
-            <Header name={"Milabag"} />
+            <Header name={"Contato"} />
 
             <IonContent fullscreen class='contatoPage' scrollEvents={true} >
                 <div className='bg-gray-200 py-4 px-6'>

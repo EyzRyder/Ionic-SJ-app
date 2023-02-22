@@ -1,6 +1,6 @@
 import { IonContent, IonLabel, IonPage, IonSegment, IonSegmentButton } from '@ionic/react';
 import { useState } from 'react';
-import Denuncia from '../components/Denuncia/Denuncia';
+import {Denuncia} from '../components/Denuncia/Denuncia';
 import Dicas from '../components/Dicas/Dicas';
 import Header from '../components/Header/Header';
 import Perguntas from '../components/Perguntas/Perguntas';
@@ -13,7 +13,7 @@ const Ajuda: React.FC = () => {
 
     return (
         <IonPage>
-            <Header name={"Milabag"} />
+            <Header name={"Ajuda"} />
 
             <IonContent fullscreen class='ajudaPage'>
                 <IonSegment value={segment} onIonChange={(e) => {
