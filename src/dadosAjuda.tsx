@@ -32,18 +32,22 @@ export const denuncia:Idenuncia[] = [
 
 export const perguntas = [
   {
+    "_id": 111,
     "pergunta": "Pergunta lorem upis ping?",
     "resposta": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eros arcu, luctus sit amet nibh ac, tristique faucibus tellus. Quisque libero justo, cursus at urna sit amet, dictum lobortis ligula. Cras"
   },
   {
+    "_id": 112,
     "pergunta": "Pergunta lorem upis ping?",
     "resposta": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eros arcu, luctus sit amet nibh ac, tristique faucibus tellus. Quisque libero justo, cursus at urna sit amet, dictum lobortis ligula. Cras"
   },
   {
+    "_id": 113,
     "pergunta": "Pergunta lorem upis ping?",
     "resposta": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eros arcu, luctus sit amet nibh ac, tristique faucibus tellus. Quisque libero justo, cursus at urna sit amet, dictum lobortis ligula. Cras"
   },
   {
+    "_id": 114,
     "pergunta": "Pergunta lorem upis ping?",
     "resposta": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eros arcu, luctus sit amet nibh ac, tristique faucibus tellus. Quisque libero justo, cursus at urna sit amet, dictum lobortis ligula. Cras"
   },
