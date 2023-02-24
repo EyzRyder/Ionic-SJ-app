@@ -7,9 +7,12 @@ Applicativo de checagem de segurança de site pelo url <br/>
 ## 🚀 Tecnologias
 Esse projeto foi desenvolvido com as seguintes tecnologias:
 
-- HTML e CSS
+- HTML e SCSS
 - Typescript
 - Ionic React
+- React Query
+- Axios
+- REST API
 
 ## 💻 Projeto
 Aqui tera link para baixar o aplicativo.
