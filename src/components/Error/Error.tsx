@@ -1,9 +1,11 @@
 interface ErrorProps{ 
-  message:string
+  error: Error;
 }
 
-export default function Error(props: ErrorProps)  {
+export default function Error(props: ErrorProps) {
+  console.log(props.error)
+
   return (
-    <div>{props.message}</div>
+    <div>{props.error?.message}</div>
   )
 }
