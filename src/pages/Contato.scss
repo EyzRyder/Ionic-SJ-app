@@ -3,4 +3,9 @@
     --padding-start: 2.25rem;
     --padding-end: 1.5rem;
     @apply px-9 py-6 h-full bg-slate-50 flex flex-col;
+
+    .custom-textarea{
+        flex: 1 1 0%;
+        height: 100%;
+    }
 }
