@@ -32,7 +32,7 @@ const appPages: AppPage[] = [
   },
   {
     title: 'Ajuda',
-    url: '/ajuda',
+    url: '/help',
     iosIcon: helpCircleOutline,
     mdIcon: helpCircleSharp
   },

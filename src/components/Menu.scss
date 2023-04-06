@@ -154,3 +154,16 @@ ion-radio {
     transform: rotate(45deg);
   }
 }
+
+
+ion-menu::part(backdrop) {
+  background-color: rgba(70, 70, 70, 0.353);
+}
+
+@media screen and (max-width: 1000px) {
+  ion-menu::part(container) {
+      border-radius: 0 20px 20px 0;
+  
+      box-shadow: 4px 0px 16px rgba(0, 13, 255, 0.18);
+    }
+}

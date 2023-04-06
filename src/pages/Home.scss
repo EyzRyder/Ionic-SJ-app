@@ -1,25 +1,25 @@
-ion-content.mainPage{
-    --background: rgb(248 250 252);
-    --padding-start: 2.25rem;
-    --padding-end:1.5rem;
-    @apply px-9 py-6 h-full bg-slate-50 flex flex-col;
+ion-content.mainPage {
+  --background: rgb(248 250 252);
+  --padding-start: 2.25rem;
+  --padding-end: 1.5rem;
+  @apply px-9 py-6 h-full bg-slate-50 flex flex-col;
 
-    ion-searchbar.custom {
-            --background: #FFFFFF;
-            --color: #8B8B8B;
-            --placeholder-color: #8B8B8B;
-            --icon-color: #8B8B8B;
-            --clear-button-color: #8B8B8B;
-    
-            --border-radius: 8px;
-            @apply mt-6;
-        }
-    
-        ion-searchbar.ios.custom {
-            --cancel-button-color: #8B8B8B;
-        }
-    
-        ion-searchbar.md.custom {
-            --cancel-button-color: #8B8B8B;
-        }
+  ion-searchbar.custom {
+    --background: #FFFFFF;
+    --color: #8B8B8B;
+    --placeholder-color: #8B8B8B;
+    --icon-color: #8B8B8B;
+    --clear-button-color: #8B8B8B;
+
+    --border-radius: 8px;
+    @apply mt-6;
+  }
+
+  ion-searchbar.ios.custom {
+    --cancel-button-color: #8B8B8B;
+  }
+
+  ion-searchbar.md.custom {
+    --cancel-button-color: #8B8B8B;
+  }
 }

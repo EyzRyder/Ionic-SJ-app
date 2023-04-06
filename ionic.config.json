@@ -1,7 +1,7 @@
 {
-  "name": "sj_url_seguranca",
+  "name": "SJ_APP",
   "integrations": {
     "capacitor": {}
   },
-  "type": "react"
+  "type": "react-vite"
 }

@@ -1,9 +1,9 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'io.ionic.starter',
-  appName: 'sj_url_seguranca',
-  webDir: 'build',
+  appId: 'io.sj.app.urlchecker',
+  appName: 'SJ_APP',
+  webDir: 'dist',
   bundledWebRuntime: false
 };
 

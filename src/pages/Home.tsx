@@ -15,8 +15,8 @@ import './Home.scss';
 
 
 const api = Axios.create({
-  baseURL: process.env.REACT_APP_API_URL
-})
+  baseURL: import.meta.env.VITE_REACT_APP_API_URL
+});
 
 function isEmptyOrSpaces(str: string) {
   return str === null || str === undefined || str === "" || str.match(/^ *$/) !== null;
