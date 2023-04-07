@@ -51,7 +51,9 @@ const LinkReview: React.FC<ContainerProps> = ({ nome, risk, idade, status }) => 
                 <p>{handleGetAge(idade)}</p>
             </div>
             <IonPopover side="top" alignment="center" trigger="click-triggerIdade" triggerAction="click">
-                <IonContent class="ion-padding">Fique atento na idade do site, se for muito jovem tome cuidado</IonContent>
+                <IonContent class="ion-padding">
+                    {handleGetAge(idade).includes("meses") ? (<>Fique atento que esse site é bem jovem</>) : (<>Fique atento na idade do site, se for muito jovem tome cuidado</>)}
+                </IonContent>
             </IonPopover>
 
             <div id="click-triggerStatus" className='row'>
