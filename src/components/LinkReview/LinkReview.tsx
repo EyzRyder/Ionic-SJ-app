@@ -34,7 +34,7 @@ const LinkReview: React.FC<ContainerProps> = ({ nome, risk, idade, status }) => 
                 <p>{nome}</p>
             </div>
             <IonPopover side="top" alignment="center" trigger="click-triggerNome" triggerAction="click">
-                <IonContent class="ion-padding">fique atento quantos coisas suspeitas no site</IonContent>
+                <IonContent class="ion-padding">Aqui voce pode verificar se é uma pessoa ou empresa confiável</IonContent>
             </IonPopover>
 
 
@@ -43,7 +43,7 @@ const LinkReview: React.FC<ContainerProps> = ({ nome, risk, idade, status }) => 
                 <p>{risk}</p>
             </div>
             <IonPopover side="top" alignment="center" trigger="click-triggerRisk" triggerAction="click">
-                <IonContent class="ion-padding">fique atento quantos coisas suspeitas no site</IonContent>
+                <IonContent class="ion-padding">Aqui voce pode ver o número de site da lista negra de sites presente </IonContent>
             </IonPopover>
 
             <div id="click-triggerIdade" className='row'>
@@ -51,7 +51,7 @@ const LinkReview: React.FC<ContainerProps> = ({ nome, risk, idade, status }) => 
                 <p>{handleGetAge(idade)}</p>
             </div>
             <IonPopover side="top" alignment="center" trigger="click-triggerIdade" triggerAction="click">
-                <IonContent class="ion-padding">Fique atento na idade do site, se for muito jovem cuidado</IonContent>
+                <IonContent class="ion-padding">Fique atento na idade do site, se for muito jovem tome cuidado</IonContent>
             </IonPopover>
 
             <div id="click-triggerStatus" className='row'>
@@ -59,7 +59,7 @@ const LinkReview: React.FC<ContainerProps> = ({ nome, risk, idade, status }) => 
                 <p>{status}</p>
             </div>
             <IonPopover side="top" alignment="center" trigger="click-triggerStatus" triggerAction="click">
-                <IonContent class="ion-padding">O selo é o que protege seu computador do site </IonContent>
+                <IonContent class="ion-padding">Site está ativo e vivo</IonContent>
             </IonPopover>
         </div>
     );
