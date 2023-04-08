@@ -1,6 +1,7 @@
 // ionic react 
 import {
     IonContent,
+    IonIcon,
     IonInput,
     IonItem,
     IonLabel,
@@ -18,6 +19,7 @@ import { useFetcher } from 'react-router-dom';
 import axios from 'axios';
 //stye
 import './Contato.scss';
+import { send } from 'ionicons/icons';
 
 
 const Contato: React.FC = () => {
@@ -103,7 +105,7 @@ const Contato: React.FC = () => {
                     method='post'
                     ref={formRef}
                     onSubmit={sendEmail}
-                    className='bg-gray-200 rounded-xl relative py-4 px-6 h-[calc(100%-20px)]'
+                    className='relative bg-gray-200 rounded-xl relative py-4 px-6 h-[calc(100%-20px)]'
                 >
                     <IonItem>
                         <IonLabel>Nome</IonLabel>
@@ -144,8 +146,13 @@ const Contato: React.FC = () => {
                     <button
                         type="submit"
                         disabled={isSubmitting}
-                        className='bg-primary-default px-3 py-2 w-full mt-5 rounded-lg text-white disabled:bg-primary-shade' >
-                        {isSubmitting ? "Enviando ..." : "Enviar"}
+                        className='bg-primary-default px-3 py-2 w-32 mt-5 rounded-lg text-white disabled:bg-primary-shade absolute bottom-3 right-3 flex justify-center items-center gap-6' >
+                        {isSubmitting ? "Enviando ..."
+                            : <>
+                                <span className='font-semibold'>Enviar</span>
+                                <IonIcon icon={send}></IonIcon>
+                            </>
+                        }
                     </button>
 
                     {/* <IonButton className="" expand="block">Enviar</IonButton> */}
