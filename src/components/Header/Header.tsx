@@ -15,7 +15,7 @@ const Header: React.FC<ContainerProps> = ({ name, loading=false }) => {
                     <IonMenuButton />
                 </IonButtons>
                 <IonTitle class='title-large'>{name}</IonTitle>
-                {loading && (<IonProgressBar type="indeterminate"></IonProgressBar>)}
+                {loading && (<IonProgressBar type="indeterminate" color="primary"></IonProgressBar>)}
             </IonToolbar>
         </IonHeader>
     );
