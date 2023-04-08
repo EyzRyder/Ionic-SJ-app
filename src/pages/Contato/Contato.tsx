@@ -96,7 +96,7 @@ const Contato: React.FC = () => {
 
     return (
         <IonPage>
-            <Header name={"Contato"} />
+            <Header name={"Contato"} loading={isSubmitting} />
 
             <IonContent fullscreen class='contatoPage' scrollEvents={true} >
                 <fetcher.Form

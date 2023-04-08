@@ -13,7 +13,7 @@ import {
 } from '@ionic/react';
 
 import { useLocation } from 'react-router-dom';
-import { helpCircleOutline, helpCircleSharp, homeOutline, homeSharp, mailOutline, mailSharp} from 'ionicons/icons';
+import { cogOutline, cogSharp, helpCircleOutline, helpCircleSharp, homeOutline, homeSharp, mailOutline, mailSharp} from 'ionicons/icons';
 import './Menu.scss';
 
 interface AppPage {
@@ -42,6 +42,12 @@ const appPages: AppPage[] = [
     iosIcon: mailOutline,
     mdIcon: mailSharp
   },
+  {
+    title: 'Configuração',
+    url: '/config',
+    iosIcon: cogOutline,
+    mdIcon: cogSharp
+  },
 ];
 
 
@@ -65,10 +71,7 @@ const Menu: React.FC = () => {
               </IonMenuToggle>
             );
           })}
-          <IonRadioGroup value="custom-checked">
-            <IonRadio className='night' value="custom">Dark</IonRadio>
-            <IonRadio className='day' value="custom-checked">Light</IonRadio>
-          </IonRadioGroup>
+
         </IonList>
       </IonContent>
     </IonMenu>

@@ -1,9 +1,9 @@
 import { IonContent, IonLabel, IonPage, IonSegment, IonSegmentButton } from '@ionic/react';
 import { useState } from 'react';
-import { Denuncia } from '../components/Denuncia/Denuncia';
-import Dicas from '../components/Dicas/Dicas';
-import Header from '../components/Header/Header';
-import Perguntas from '../components/Perguntas/Perguntas';
+import { Denuncia } from '../../components/Denuncia/Denuncia';
+import Dicas from '../../components/Dicas/Dicas';
+import Header from '../../components/Header/Header';
+import Perguntas from '../../components/Perguntas/Perguntas';
 import './Help.scss';
 
 const Help: React.FC = () => {

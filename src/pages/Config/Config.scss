@@ -1,0 +1,49 @@
+.configPage {
+  min-height: 100vh;
+  width: 100%;
+
+  .radioGroup{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1em;
+  }
+  ion-radio {
+    &::part(container) {
+      border-radius: 8px;
+      border: 2px solid #ddd;
+    }
+
+    &::part(mark) {
+      background: none;
+      transition: none;
+      transform: none;
+      border-radius: 0;
+    }
+
+    &.radio-checked::part(container) {
+      border-color: transparent;
+    }
+
+    &.day::part(container) {
+      background: #fff;
+    }
+
+    &.night::part(container) {
+      background: rgb(27, 25, 25);
+    }
+
+
+    &.radio-checked::part(mark) {
+      width: 6px;
+      height: 10px;
+
+      border-width: 0px 2px 2px 0px;
+      border-style: solid;
+      border-color: var(--ion-color-primary);
+
+      transform: rotate(45deg);
+    }
+  }
+}

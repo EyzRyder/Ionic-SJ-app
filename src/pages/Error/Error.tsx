@@ -1,5 +1,5 @@
 import { IonContent, IonIcon, IonPage } from "@ionic/react"
-import Header from "../components/Header/Header"
+import Header from "../../components/Header/Header"
 import { useNavigate, useRouteError } from "react-router";
 import { Link } from "react-router-dom";
 import { arrowBackOutline, homeOutline } from "ionicons/icons";

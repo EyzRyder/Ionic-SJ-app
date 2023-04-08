@@ -2,13 +2,13 @@ import { useEffect, useState } from 'react';
 import { IonContent, IonPage, IonSearchbar } from '@ionic/react';
 import { useQuery } from 'react-query'
 import Axios from "axios"
-import { ILink } from '../interfaces/interface';
+import { ILink } from '../../interfaces/interface';
 
 //Components
-import Header from '../components/Header/Header';
-import LinkPreview from '../components/LinkPreview/LinkPreview';
-import LinkReview from '../components/LinkReview/LinkReview';
-import Loading from '../components/Loading/Loading';
+import Header from '../../components/Header/Header';
+import LinkPreview from '../../components/LinkPreview/LinkPreview';
+import LinkReview from '../../components/LinkReview/LinkReview';
+import Loading from '../../components/Loading/Loading';
 
 //Style
 import './Home.scss';
