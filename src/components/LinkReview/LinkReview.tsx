@@ -11,6 +11,7 @@ interface ContainerProps {
 
 const LinkReview: React.FC<ContainerProps> = ({ nome, risk, idade, status }) => {
     const handleGetAge = (idade: string) => {
+        if (idade == undefined||idade == null){ return "Couldn't find"}
         const madeYear: number = parseInt(idade.slice(0, 4))
         const currentYear: number = parseInt(new Date().getFullYear().toString());
         const age = currentYear - madeYear
