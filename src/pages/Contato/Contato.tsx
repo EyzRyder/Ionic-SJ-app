@@ -60,15 +60,16 @@ const Contato: React.FC = () => {
                     return data
                 })
                 .catch(error => {
+                    setIsSubmitting(false);
                     console.error(error);
                     return presentToast("Não foi possível verificar seu email", "top", "danger")
                 });
             if (emailData.deliverability == "UNDELIVERABLE" || emailData.deliverability == "RISKY" || emailData.deliverability == "UNKNOWN") {
+                setIsSubmitting(false);
                 return presentToast("email não foi aceito por motivos de não estar disponível, suspeita ou desconhecido", "top", "danger")
+
             }
-            if (emailData.is_valid_format.value == true) {
-                return presentToast("Formato de email não valido", "top", "danger")
-            }
+
 
             await emailjs.sendForm(
                 import.meta.env.VITE_REACT_APP_SERVICE_ID,
@@ -81,6 +82,7 @@ const Contato: React.FC = () => {
                     presentToast("Mensagem enviado!", 'top', 'success');
                 }, (error) => {
                     console.log(error.text);
+                    setIsSubmitting(false);
                     presentToast('Teve um problema ao enviar seu email', 'top', 'danger');
                 });
             setIsSubmitting(false);
