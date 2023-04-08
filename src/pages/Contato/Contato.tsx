@@ -146,7 +146,7 @@ const Contato: React.FC = () => {
                     <button
                         type="submit"
                         disabled={isSubmitting}
-                        className='bg-primary-default px-3 py-2 w-32 mt-5 rounded-lg text-white disabled:bg-primary-shade absolute bottom-3 right-3 flex justify-center items-center gap-6' >
+                        className='bg-primary-default px-3 py-2 w-32 mt-5 rounded-lg text-white disabled:bg-primary-shade absolute bottom-4 right-6 flex justify-center items-center gap-6' >
                         {isSubmitting ? "Enviando ..."
                             : <>
                                 <span className='font-semibold'>Enviar</span>
