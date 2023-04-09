@@ -10,10 +10,15 @@ interface ContainerProps {
 }
 
 const LinkReview: React.FC<ContainerProps> = ({ nome, risk, idade, status }) => {
+
     const handleGetAge = (idade: string) => {
-        if (idade == undefined||idade == null){ return "Couldn't find"}
-        const madeYear: number = parseInt(idade.slice(0, 4))
-        const currentYear: number = parseInt(new Date().getFullYear().toString());
+        if (idade === undefined || idade === null) { return "Couldn't find" }
+        const date = new Date();
+        let valorIdades = idade.split("-");
+        valorIdades = [valorIdades[0], valorIdades[1], ...valorIdades[2].split(" ")];
+
+        const madeYear: number = parseInt(valorIdades[0])
+        const currentYear: number = parseInt(date.getFullYear().toString());
         const age = currentYear - madeYear
         if (age > 1) {
             return age + " anos"
@@ -22,21 +27,32 @@ const LinkReview: React.FC<ContainerProps> = ({ nome, risk, idade, status }) => 
             return age + " ano"
         }
 
-        const madeMonth: number = parseInt(idade.slice(4, 7))
-        const currentMonth: number = parseInt(new Date().getMonth().toString());
-        const months = currentMonth - madeMonth
+        const madeMonth: number = parseInt(valorIdades[1])
+        const currentMonth: number = parseInt(date.getMonth().toString()) + 1;
+        const months = currentMonth - madeMonth;
 
-        return months + " meses"
+        if (months > 1) {
+            return months + ' meses';
+        }
+        if (months === 1) {
+            return months + ' mes';
+        }
+        return "Menos de um mes"
     }
     return (
         <div className="reviewContainer">
-            <div id="click-triggerNome" className='row'>
-                <label>Nome</label>
-                <p>{nome}</p>
-            </div>
-            <IonPopover side="top" alignment="center" trigger="click-triggerNome" triggerAction="click">
-                <IonContent class="ion-padding">Aqui voce pode verificar se é uma pessoa ou empresa confiável</IonContent>
-            </IonPopover>
+            {nome && (
+                <>
+                    <div id="click-triggerNome" className='row'>
+                        <label>Nome</label>
+                        <p>{nome}</p>
+                    </div>
+                    <IonPopover side="top" alignment="center" trigger="click-triggerNome" triggerAction="click">
+                        <IonContent class="ion-padding">Aqui voce pode verificar se é uma pessoa ou empresa confiável</IonContent>
+                    </IonPopover>
+                </>
+            )}
+
 
 
             <div id="click-triggerRisk" className='row'>

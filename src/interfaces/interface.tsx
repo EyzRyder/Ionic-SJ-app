@@ -5,7 +5,7 @@ export interface ILink {
   "description": string,
   "img": string
   "whoRegistered": string,
-  "registeredOn": string,
+  "domainAge": string,
   "status": string,
   "detectionsCounts": string
 }

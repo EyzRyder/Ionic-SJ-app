@@ -49,7 +49,7 @@ const Home: React.FC = () => {
         {isFetching && <Loading />}
         {data && <div>
           <LinkPreview url={urlSearch} title={data.title} description={data.description} img={data.img} />
-          <LinkReview nome={data.whoRegistered} risk={data.detectionsCounts} idade={data.registeredOn} status={data.status} />
+          <LinkReview nome={data.whoRegistered} risk={data.detectionsCounts} idade={data.domainAge} status={data.status} />
         </div>}
       </IonContent>
     </IonPage>
