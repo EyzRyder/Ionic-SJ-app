@@ -2,14 +2,14 @@ import { IonContent, IonPopover } from '@ionic/react';
 import './LinkReview.scss';
 
 interface ContainerProps {
-    nome: string
+    nome?: string
     risk: string;
     idade: string;
-    status: string;
+    serverLocal: string;
 
 }
 
-const LinkReview: React.FC<ContainerProps> = ({ nome, risk, idade, status }) => {
+const LinkReview: React.FC<ContainerProps> = ({ nome, risk, idade, serverLocal }) => {
 
     const handleGetAge = (idade: string) => {
         if (idade === undefined || idade === null) { return "Couldn't find" }
@@ -74,8 +74,8 @@ const LinkReview: React.FC<ContainerProps> = ({ nome, risk, idade, status }) => 
             </IonPopover>
 
             <div id="click-triggerStatus" className='row'>
-                <label>Status</label>
-                <p>{status}</p>
+                <label>Local do Server</label>
+                <p>{serverLocal}</p>
             </div>
             <IonPopover side="top" alignment="center" trigger="click-triggerStatus" triggerAction="click">
                 <IonContent class="ion-padding">Site está ativo e vivo</IonContent>

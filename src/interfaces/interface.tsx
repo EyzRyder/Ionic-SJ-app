@@ -4,8 +4,8 @@ export interface ILink {
   "favicon": string,
   "description": string,
   "img": string
-  "whoRegistered": string,
+  "whoRegistered"?: string,
   "domainAge": string,
-  "status": string,
+  "serverLocal": string,
   "detectionsCounts": string
 }
