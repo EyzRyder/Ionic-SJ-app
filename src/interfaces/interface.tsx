@@ -7,5 +7,6 @@ export interface ILink {
   "whoRegistered"?: string,
   "domainAge": string,
   "serverLocal": string,
-  "detectionsCounts": string
+  "detectionsCounts": string,
+  "registerData"?: string[]
 }

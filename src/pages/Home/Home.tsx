@@ -40,7 +40,7 @@ const Home: React.FC = () => {
 
   return (
     <IonPage>
-      <Header name={"SJ App"} />
+      <Header name={"SJ App"} loading={isFetching} />
 
       <IonContent class='mainPage' fullscreen scrollEvents={true}>
         <IonSearchbar value={urlSearch} animated={true} placeholder="Digite ou cole o url aqui" class='custom' onIonBlur={(e) => {
@@ -49,7 +49,7 @@ const Home: React.FC = () => {
         {isFetching && <Loading />}
         {data && <div>
           <LinkPreview url={urlSearch} title={data.title} description={data.description} img={data.img} />
-          <LinkReview nome={data.whoRegistered} risk={data.detectionsCounts} idade={data.domainAge} serverLocal={data.serverLocal} />
+          <LinkReview nome={data.whoRegistered} risk={data.detectionsCounts} idade={data.domainAge} serverLocal={data.serverLocal} registerData={data.registerData} />
         </div>}
       </IonContent>
     </IonPage>

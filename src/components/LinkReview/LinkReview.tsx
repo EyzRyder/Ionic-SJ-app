@@ -1,44 +1,18 @@
 import { IonContent, IonPopover } from '@ionic/react';
 import './LinkReview.scss';
+import { handleGetAge } from '../../helpers';
 
 interface ContainerProps {
     nome?: string
     risk: string;
     idade: string;
     serverLocal: string;
-
+    registerData?: string[];
 }
 
-const LinkReview: React.FC<ContainerProps> = ({ nome, risk, idade, serverLocal }) => {
+const LinkReview: React.FC<ContainerProps> = ({ nome, risk, idade, serverLocal, registerData }) => {
 
-    const handleGetAge = (idade: string) => {
-        if (idade === undefined || idade === null) { return "Couldn't find" }
-        const date = new Date();
-        let valorIdades = idade.split("-");
-        valorIdades = [valorIdades[0], valorIdades[1], ...valorIdades[2].split(" ")];
 
-        const madeYear: number = parseInt(valorIdades[0])
-        const currentYear: number = parseInt(date.getFullYear().toString());
-        const age = currentYear - madeYear
-        if (age > 1) {
-            return age + " anos"
-        }
-        if (age === 1) {
-            return age + " ano"
-        }
-
-        const madeMonth: number = parseInt(valorIdades[1])
-        const currentMonth: number = parseInt(date.getMonth().toString()) + 1;
-        const months = currentMonth - madeMonth;
-
-        if (months > 1) {
-            return months + ' meses';
-        }
-        if (months === 1) {
-            return months + ' mes';
-        }
-        return "Menos de um mes"
-    }
     return (
         <div className="reviewContainer">
             {nome && (
@@ -46,6 +20,17 @@ const LinkReview: React.FC<ContainerProps> = ({ nome, risk, idade, serverLocal }
                     <div id="click-triggerNome" className='row'>
                         <label>Nome</label>
                         <p>{nome}</p>
+                    </div>
+                    <IonPopover side="top" alignment="center" trigger="click-triggerNome" triggerAction="click">
+                        <IonContent class="ion-padding">Aqui voce pode verificar se é uma pessoa ou empresa confiável</IonContent>
+                    </IonPopover>
+                </>
+            )}
+            {registerData && (
+                <>
+                    <div id="click-triggerNome" className='row'>
+                        <label>Pais de Registro</label>
+                        <p>{registerData[16]}</p>
                     </div>
                     <IonPopover side="top" alignment="center" trigger="click-triggerNome" triggerAction="click">
                         <IonContent class="ion-padding">Aqui voce pode verificar se é uma pessoa ou empresa confiável</IonContent>
