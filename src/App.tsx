@@ -20,13 +20,31 @@ import '@ionic/react/css/display.css';
 /* Theme variables */
 import './theme/variables.scss';
 import { router } from './Router';
+import { useStorage } from './hook/useStorage';
+import { useEffect } from 'react';
 
 setupIonicReact();
 
-const App: React.FC = () => (
+
+const App: React.FC = () => {
+
+  const { darkMode } = useStorage();
+
+  const isEnabled = typeof enabledState === 'undefined' && darkMode;
+
+  useEffect(() => {
+    console.log(darkMode)
+    const className = 'dark';
+    const bodyClass = document.body.classList;
+
+    isEnabled ? bodyClass.add(className) : bodyClass.remove(className);
+
+
+  }, [darkMode, isEnabled]);
+  return(
   <IonApp>
     <RouterProvider router={router} />
   </IonApp>
-);
+)};
 
 export default App;
