@@ -1,6 +1,6 @@
 ion-content.ajudaPage {
-    --background: rgb(248 250 252);
+    --background: var(--main-BG);
     --padding-start: 1.5rem;
     --padding-end: 1.5rem;
-    color: black;
+    color: var(--ion-text-color);
 }

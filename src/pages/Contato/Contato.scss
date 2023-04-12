@@ -1,8 +1,9 @@
 .contatoPage {
-    --background: rgb(248 250 252);
+    --background: var(--main-BG);
     --padding-start: 2.25rem;
     --padding-end: 1.5rem;
-    @apply h-full bg-slate-50 flex flex-col;
+    color: var(--ion-text-color);
+    @apply h-full flex flex-col;
 
     .custom-textarea{
         height: 100%;

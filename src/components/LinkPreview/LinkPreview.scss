@@ -1,8 +1,8 @@
 .linkContainer {
-    @apply py-2 px-4 mt-6 flex flex-col gap-3 items-center bg-white shadow-md text-black rounded-md relative;
+    @apply py-2 px-4 mt-6 flex flex-col gap-3 items-center bg-white shadow-md text-black dark:bg-gray-800 dark:text-white rounded-md relative;
 
     .previewImg {
-        @apply bg-gray-200 w-full h-[70%] object-cover;
+        @apply bg-gray-200 dark:bg-gray-800 w-full h-[70%] object-cover;
     }
 
     .previewText {

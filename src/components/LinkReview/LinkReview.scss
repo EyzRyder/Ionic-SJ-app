@@ -1,13 +1,13 @@
 .reviewContainer{
-    @apply px-4 py-2 mt-6 bg-white shadow-md flex flex-col gap-3 rounded-md ;
+    @apply px-4 py-2 mt-6 bg-white shadow-md flex flex-col gap-3 rounded-md dark:bg-gray-800 dark:text-white ;
     .row{
         @apply flex flex-row border-t border-b border-black py-1;
 
         label{
-            @apply text-black flex-1 font-bold flex items-center ;
+            @apply text-black flex-1 font-bold flex items-center dark:text-white ;
         }
         p{
-            @apply text-black flex items-center;
+            @apply text-black flex items-center dark:text-white;
         }
     }
 }

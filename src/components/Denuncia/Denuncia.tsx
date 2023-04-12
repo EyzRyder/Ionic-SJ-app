@@ -3,7 +3,7 @@ import { denuncia as passos, Idenuncia } from '../../dadosAjuda';
 
 export function Denuncia() {
     return (
-        <IonContent className='DenunciaPage' scrollEvents={true}>
+        <IonContent className='DenunciaPage' style={{  '--background': 'var(--main-BG)'}} scrollEvents={true}>
             <div className='flex flex-col gap-5'>
                 <h1 className='font-bold text-2xl text-center'>Caso tenha sofrido um golpe ou alguma transação</h1>
                 {passos?.map((passo: Idenuncia) => {

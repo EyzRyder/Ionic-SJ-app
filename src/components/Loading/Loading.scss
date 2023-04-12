@@ -27,7 +27,7 @@
       top: 0;
       width: 10px;
       height: 50px;
-      background-color: #000000;
+      background-color: var(--ion-text-color);
       -webkit-animation: grow 1.5s linear infinite;
       animation: grow 1.5s linear infinite;
     }

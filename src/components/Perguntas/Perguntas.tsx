@@ -6,7 +6,7 @@ import './Perguntas.scss';
 const Perguntas: React.FC = () => {
 
     return (
-        <IonContent class='PerguntasPage' scrollEvents={true}>
+        <IonContent class='PerguntasPage' style={{ '--background': 'var(--main-BG)' }} scrollEvents={true}>
             <div className='flex flex-col gap-5'>
                 <h1 className='font-bold text-2xl text-center'>
                     Aqui algumas perguntas frequentes

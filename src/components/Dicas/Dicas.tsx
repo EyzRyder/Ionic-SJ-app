@@ -5,7 +5,7 @@ import faceBookClone from "../../assets/faceboockClone.png"
 const Dicas: React.FC = () => {
 
     return (
-        <IonContent class='dicasPage' >
+        <IonContent class='dicasPage' style={{ '--background': 'var(--main-BG)' }} >
             <div className='flex flex-col justify-center items-center gap-5'>
                 <h1 className='font-bold text-2xl text-center'>
                     Confira o Domínio e a URL e Busque por Selos de Segurança
