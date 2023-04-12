@@ -12,7 +12,7 @@ import {
   IonRadioGroup,
 } from '@ionic/react';
 
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { cogOutline, cogSharp, helpCircleOutline, helpCircleSharp, homeOutline, homeSharp, mailOutline, mailSharp} from 'ionicons/icons';
 import './Menu.scss';
 
@@ -64,10 +64,15 @@ const Menu: React.FC = () => {
           {appPages.map((appPage, index) => {
             return (
               <IonMenuToggle key={index} autoHide={false}>
-                <IonItem className={location.pathname === appPage.url ? 'selected' : ''} routerLink={appPage.url} routerDirection="none" lines="none" detail={false}>
+                <Link to={appPage.url}>
+                <IonItem
+                  className={location.pathname === appPage.url ? 'selected' : ''}
+                  routerDirection="none"
+                  lines="none" detail={false}>
                   <IonIcon slot="start" ios={appPage.iosIcon} md={appPage.mdIcon} />
                   <IonLabel>{appPage.title}</IonLabel>
                 </IonItem>
+                    </Link>
               </IonMenuToggle>
             );
           })}
