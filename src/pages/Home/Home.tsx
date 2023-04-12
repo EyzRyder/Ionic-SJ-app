@@ -36,7 +36,7 @@ const Home: React.FC = () => {
     refetch()
   }, [urlSearch])
 
-  { error ?? console.log(error) }
+  { error && console.log(error) }
 
   return (
     <IonPage>
@@ -47,10 +47,37 @@ const Home: React.FC = () => {
           setUrlSearch(getUrl(e.target.value || "") || "");
         }}></IonSearchbar>
         {isFetching && <Loading />}
-        {data && <div>
-          <LinkPreview url={urlSearch} title={data.title} description={data.description} img={data.img} />
-          <LinkReview nome={data.whoRegistered} risk={data.detectionsCounts} idade={data.domainAge} serverLocal={data.serverLocal} registerData={data.registerData} />
-        </div>}
+        {data ? <div>
+          <LinkPreview
+            url={urlSearch}
+            title={data.title}
+            description={data.description}
+            img={data.img}
+          />
+          <LinkReview
+            nome={data.whoRegistered}
+            risk={data.detectionsCounts}
+            idade={data.domainAge}
+            serverLocal={data.serverLocal}
+            registerData={data.registerData}
+          />
+        </div>
+          :
+          <div>
+            <LinkPreview
+        url={""}
+        title={"Titulo"}
+        description={"Descricao e informa;oes do site oferecida pelo por eles vao ser colocados aqui, as vezes nao esta disponivels, a imagem e uma descricao"}
+              img={"https://github.com/EyzRyder/EyzRyder/raw/main/img/thumbnail.png"}
+      />
+            <LinkReview
+              nome={"Theme SJ"}
+              risk={"0"}
+              idade={"2004-12-19"}
+              serverLocal={"(SP) BRASIL"}
+      />
+          </div>
+        }
       </IonContent>
     </IonPage>
   );
