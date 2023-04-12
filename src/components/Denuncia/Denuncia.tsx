@@ -12,7 +12,7 @@ export function Denuncia() {
                             <div className=' rounded-full bg-primary-default w-12 h-12 flex justify-center items-center text-white'>
                                 {passo.number}
                             </div>
-                            <div className='bg-gray-400 p-2 rounded-lg text-white text-base font-normal'>
+                            <div className='bg-gray-400 dark:bg-[var(--item-color)] p-2 rounded-lg text-white text-base font-normal'>
                                 <span>{passo.text} </span>
                                 <span>
                                     <a className='underline text-tertiary-default' href={passo.link}>

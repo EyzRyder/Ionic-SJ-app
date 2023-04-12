@@ -11,10 +11,10 @@ const Perguntas: React.FC = () => {
                 <h1 className='font-bold text-2xl text-center'>
                     Aqui algumas perguntas frequentes
                 </h1>
-                <div className='bg-gray-200 p-6 rounded-xl flex flex-col gap-3'>
+                <div className='bg-gray-200 dark:bg-[var(--item-color)] p-6 rounded-xl flex flex-col gap-3'>
                     {perguntas?.map(pergunta => {
                         return (
-                            <details key={pergunta._id} className='bg-gray-400 text-white flex flex-col justify-center items-center px-2 py-3 rounded-lg gap-3'>
+                            <details key={pergunta._id} className='bg-gray-400 dark:bg-[#333333] text-white flex flex-col justify-center items-center px-2 py-3 rounded-lg gap-3'>
                                 <summary className=' text-lg font-bold'>
                                     {pergunta.pergunta}
                                 </summary>

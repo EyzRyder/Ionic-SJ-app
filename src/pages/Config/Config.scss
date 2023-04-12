@@ -6,4 +6,9 @@
   --padding-start: 1.5rem;
   --padding-end: 1.5rem;
   color: var(--ion-text-color);
+
+      ion-item {
+          --background: none;
+          --border-color: var(--ion-text-color);
+        }
 }

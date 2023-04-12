@@ -16,7 +16,8 @@ http://ionicframework.com/docs/theming/ */
 /** Ionic CSS Variables **/
 :root {
 
-  --main-BG: #e8e8e8;
+  --main-BG: #f3f3f3;
+  --ion-search-color: #ffffff;
   /** primary **/
   --ion-color-primary: #3880ff;
   --ion-color-primary-rgb: 56, 128, 255;
@@ -97,6 +98,9 @@ http://ionicframework.com/docs/theming/ */
    */
 
 body.dark {
+  --main-BG: #191919;
+  --item-color: #212121;
+
   --ion-color-primary: #428cff;
   --ion-color-primary-rgb: 66, 140, 255;
   --ion-color-primary-contrast: #ffffff;
@@ -211,7 +215,7 @@ body.dark {
    */
 
 .md body.dark {
-  --main-BG: rgb(9, 14, 23);
+
   --ion-background-color: #121212;
   --ion-background-color-rgb: 18, 18, 18;
 

@@ -6,7 +6,7 @@ ion-content.mainPage {
   @apply px-9 py-6 h-full flex flex-col;
 
   ion-searchbar.custom {
-    --background: #FFFFFF;
+    --background: var(--item-color);
     --color: #8B8B8B;
     --placeholder-color: #8B8B8B;
     --icon-color: #8B8B8B;

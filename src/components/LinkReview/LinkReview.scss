@@ -1,5 +1,5 @@
 .reviewContainer{
-    @apply px-4 py-2 mt-6 bg-white shadow-md flex flex-col gap-3 rounded-md dark:bg-gray-800 dark:text-white ;
+    @apply px-4 py-2 mt-6 bg-white shadow-md flex flex-col gap-3 rounded-md dark:bg-[var(--item-color)] dark:text-white ;
     .row{
         @apply flex flex-row border-t border-b border-black py-1;
 

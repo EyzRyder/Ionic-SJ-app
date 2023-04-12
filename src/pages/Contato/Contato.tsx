@@ -105,7 +105,7 @@ const Contato: React.FC = () => {
                     method='post'
                     ref={formRef}
                     onSubmit={sendEmail}
-                    className='relative bg-gray-200 dark:bg-gray-800 rounded-xl relative py-4 px-6 h-[calc(100%-20px)]'
+                    className='relative bg-gray-200 dark:bg-[#212121] rounded-xl relative py-4 px-6 h-[calc(100%-20px)]'
                 >
                     <IonItem>
                         <IonLabel>Nome</IonLabel>
