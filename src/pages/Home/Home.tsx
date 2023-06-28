@@ -1,10 +1,11 @@
-import { useEffect, useState } from 'react';
-import { IonContent, IonPage, IonSearchbar } from '@ionic/react';
-
+import { useState } from 'react';
+import { IonContent, IonPage, IonIcon } from '@ionic/react';
+import { searchOutline } from 'ionicons/icons';
 //dependencies
 import { useQuery } from 'react-query'
 import Axios from "axios"
-import { ILink } from '../../interfaces/interface';
+import { SubmitHandler, useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
 
 //Components
 import Header from '../../components/Header/Header';
@@ -14,8 +15,11 @@ import Loading from '../../components/Loading/Loading';
 
 //Style
 import './Home.scss';
+import LOGO from '../../assets/Logo.svg'
+// helpers
 
 import { getUrl, isEmptyOrSpaces } from '../../helpers';
+import { ILink, UrlForm, UrlFormSchema } from '../../interfaces/interface';
 
 const api = Axios.create({
   baseURL: import.meta.env.VITE_REACT_APP_API_URL
@@ -23,6 +27,28 @@ const api = Axios.create({
 
 const Home: React.FC = () => {
   const [urlSearch, setUrlSearch] = useState<string>("")
+
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors, isSubmitting },
+  } = useForm<UrlForm>({
+    defaultValues: {
+      url: '',
+    },
+    resolver: zodResolver(UrlFormSchema),
+  });
+  const onSubmit: SubmitHandler<UrlForm> = async ({ url }) => {
+    // console.log(url);
+    if (!url || isEmptyOrSpaces(url)) return
+    const search = getUrl(url)
+    if (!search || search == null) return
+    await setUrlSearch(search);
+    // console.log(getUrl(url));
+    return await refetch()
+  };
+
   const { data, isFetching, error, refetch } = useQuery<ILink>('link', async () => {
     if (isEmptyOrSpaces(urlSearch)) return
     const response = await api.post("linkplusregisterdata", { data: urlSearch })
@@ -31,28 +57,42 @@ const Home: React.FC = () => {
     staleTime: 10000 * 60,
   });
 
-  useEffect(() => {
-    console.log(urlSearch)
-    refetch()
-  }, [urlSearch])
-
-  { error && console.log(error) }
+  // { error && console.log(error) }
 
   return (
     <IonPage>
       <Header name={"SJ App"} loading={isFetching} />
 
       <IonContent class='mainPage' fullscreen scrollEvents={true}>
-        <IonSearchbar value={urlSearch} animated={true} placeholder="Digite ou cole o url aqui" class='custom' onIonBlur={(e) => {
-          setUrlSearch(getUrl(e.target.value || "") || "");
-        }}></IonSearchbar>
+        <form
+          className='custom flex justify-center items-center gap-2 mt-6 w-full px-3 py-2 outline-transparent focus:outline-transparent shadow-md'
+          onSubmit={handleSubmit(onSubmit)}
+        >
+          <button type="submit">
+            <IonIcon
+              icon={searchOutline}
+              size="large"
+            >
+            </IonIcon>
+          </button>
+
+          <input
+            type='search'
+            {...register('url')}
+            disabled={isFetching || isSubmitting}
+            placeholder="Digite ou cole o url aqui"
+            className='bg-transparent ring-0 outline-0 focus:ring-0  w-full order-transparent focus:border-0'
+          />
+        </form>
         {isFetching && <Loading />}
-        {data ? <div>
+        {data ? <div className='mb-12'>
           <LinkPreview
             url={urlSearch}
             title={data.title}
             description={data.description}
             img={data.img}
+            risk={data.detectionsCounts}
+            birth={data.domainAge}
           />
           <LinkReview
             nome={data.whoRegistered}
@@ -63,23 +103,25 @@ const Home: React.FC = () => {
           />
         </div>
           :
-          <div>
+          <div className='mb-12'>
             <LinkPreview
-        url={""}
-        title={"Titulo"}
-        description={"Descricao e informa;oes do site oferecida pelo por eles vao ser colocados aqui, as vezes nao esta disponivels, a imagem e uma descricao"}
-              img={"https://github.com/EyzRyder/EyzRyder/raw/main/img/thumbnail.png"}
-      />
+              url={"www.site.com"}
+              title={"Titulo"}
+              description={"Descricao e informa;oes do site oferecida pelo por eles vao ser colocados aqui, as vezes nao esta disponivels, a imagem e uma descricao"}
+              img={LOGO}
+              risk={"0/40"}
+              birth={"2004-12-19"}
+            />
             <LinkReview
-              nome={"Theme SJ"}
-              risk={"0"}
+              nome={"Empresa .ic"}
+              risk={"0/40"}
               idade={"2004-12-19"}
               serverLocal={"(SP) BRASIL"}
-      />
+            />
           </div>
         }
       </IonContent>
-    </IonPage>
+    </IonPage >
   );
 };
 

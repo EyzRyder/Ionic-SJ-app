@@ -6,9 +6,9 @@ import { useState, useEffect } from "react"
 import  { useStorage } from "../../hook/useStorage"
 export const Config = () => {
   const { darkMode, addNewMode } = useStorage();
-  
-  const isEnabled = typeof enabledState === 'undefined' && darkMode;
-  
+
+  const isEnabled = darkMode;
+
   useEffect(() => {
     console.log(darkMode)
     const className = 'dark';
@@ -18,11 +18,11 @@ export const Config = () => {
 
 
   }, [darkMode, isEnabled]);
-  
+
   return (
     <IonPage>
       <Header name={"Configuração"} />
-      
+
 
       <IonContent fullscreen class='configPage' scrollEvents={true} >
         <IonItem className="radioItem">
@@ -33,13 +33,13 @@ export const Config = () => {
           <IonLabel>Sites usados</IonLabel>
           <Link to={"reference"}>Ver reference</Link>
         </IonItem>
-        <IonItem>
+        {/* <IonItem>
           <IonLabel>Sobre o TCC</IonLabel>
           <p>Ler</p>
-        </IonItem>
+        </IonItem> */}
         <IonItem>
           <IonLabel>Desenvolvido por</IonLabel>
-          <p>Gabriel Bessi</p>
+          <a className="underline text-primary-default" href="https://bessiportfolio.vercel.app">Gabriel Bessi</a>
         </IonItem>
       </IonContent>
     </IonPage>

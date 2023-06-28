@@ -30,7 +30,7 @@ const App: React.FC = () => {
 
   const { darkMode } = useStorage();
 
-  const isEnabled = typeof enabledState === 'undefined' && darkMode;
+  const isEnabled = darkMode;
 
   useEffect(() => {
     console.log(darkMode)

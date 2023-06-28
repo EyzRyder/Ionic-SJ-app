@@ -2,25 +2,32 @@ ion-content.mainPage {
   --background: var(--main-BG);
   --padding-start: 2.25rem;
   --padding-end: 1.5rem;
+  --margin-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
   color: var(--ion-text-color);
   @apply px-9 py-6 h-full flex flex-col;
 
-  ion-searchbar.custom {
-    --background: var(--item-color);
-    --color: #8B8B8B;
-    --placeholder-color: #8B8B8B;
-    --icon-color: #8B8B8B;
-    --clear-button-color: #8B8B8B;
+  .custom {
+    background: var(--item-color);
+    color: #8B8B8B;
+    ::placeholder {
+        /* Chrome, Firefox, Opera, Safari 10.1+ */
+        color: 8B8B8B;
+        opacity: 1;
+        /* Firefox */
+      }
 
-    --border-radius: 8px;
-    @apply mt-6;
+      :-ms-input-placeholder {
+        /* Internet Explorer 10-11 */
+        color: 8B8B8B;
+      }
+
+      ::-ms-input-placeholder {
+        /* Microsoft Edge */
+        color: 8B8B8B;
+      }
+
+    border-radius: 8px;
   }
 
-  ion-searchbar.ios.custom {
-    --cancel-button-color: #8B8B8B;
-  }
-
-  ion-searchbar.md.custom {
-    --cancel-button-color: #8B8B8B;
-  }
 }
