@@ -1,4 +1,4 @@
-// ionic react 
+// ionic react
 import {
     IonContent,
     IonIcon,
@@ -20,6 +20,7 @@ import axios from 'axios';
 //stye
 import './Contato.scss';
 import { send } from 'ionicons/icons';
+import { environment } from '../../environment_var';
 
 
 const Contato: React.FC = () => {
@@ -55,7 +56,7 @@ const Contato: React.FC = () => {
 
         try {
             setIsSubmitting(true);
-            const emailData = await axios.get(`https://emailvalidation.abstractapi.com/v1/?api_key=${import.meta.env.VITE_REACT_APP_abs_emailvery_KEY}&email=${email}`).
+            const emailData = await axios.get(`https://emailvalidation.abstractapi.com/v1/?api_key=${environment.abs_emailvery_KEY}&email=${email}`).
                 then(response => {
                     return response.data
                 }).then(data => {
@@ -74,10 +75,10 @@ const Contato: React.FC = () => {
 
 
             await emailjs.sendForm(
-                import.meta.env.VITE_REACT_APP_SERVICE_ID,
-                import.meta.env.VITE_REACT_APP_TEMPLATE_ID,
+                environment.SERVICE_ID,
+                environment.TEMPLATE_ID,
                 formRef.current,
-                import.meta.env.VITE_REACT_APP_EmJS_PUBLIC_KEY
+                environment.EmJS_PUBLIC_KEY
             )
                 .then((result) => {
                     console.log(result.text);

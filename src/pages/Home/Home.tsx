@@ -20,9 +20,10 @@ import LOGO from '../../assets/Logo.svg'
 
 import { getUrl, isEmptyOrSpaces } from '../../helpers';
 import { ILink, UrlForm, UrlFormSchema } from '../../interfaces/interface';
+import { environment } from '../../environment_var';
 
 const api = Axios.create({
-  baseURL: import.meta.env.VITE_REACT_APP_API_URL
+  baseURL: environment.API_URL
 });
 
 const Home: React.FC = () => {
