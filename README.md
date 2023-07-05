@@ -14,5 +14,5 @@ Github Repositório do APi: [Link para o api](https://github.com/EyzRyder/url_ch
 <hr>
 <div align="center">
 <h2>QR Code para o apk</h2>
-<img align="center" src="./src/assets/qrCodev1.4.png" alt="qr code"/>
+<img align="center" src="./public/qrCodev1.5.svg" alt="qr code" width="250" />
 </div>
