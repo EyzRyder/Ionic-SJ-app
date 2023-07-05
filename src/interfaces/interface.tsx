@@ -2,6 +2,7 @@ import * as z from 'zod';
 
 export interface ILink {
   "title": string,
+  "url": string,
   "favicon": string,
   "description": string,
   "img": string

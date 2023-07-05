@@ -88,7 +88,7 @@ const Home: React.FC = () => {
         {isFetching && <Loading />}
         {data ? <div className='mb-12'>
           <LinkPreview
-            url={urlSearch}
+            url={data.url}
             title={data.title}
             description={data.description}
             img={data.img}
